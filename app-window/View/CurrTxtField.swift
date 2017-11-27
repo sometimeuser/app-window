@@ -7,11 +7,19 @@
 //
 
 import UIKit
-
+@IBDesignable
 class CurrTxtField: UITextField {
+    
+    override func prepareForInterfaceBuilder() {
+        customview()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        customview()
+    }
+    
+    func customview() -> Void {
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.25)
         layer.cornerRadius = 5.0
         textAlignment = .center
